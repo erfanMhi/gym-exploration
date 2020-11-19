@@ -13,7 +13,7 @@ HORIZONTAL = 2
 class HardSquareEnv(discrete.DiscreteEnv):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, exp_value=6):
+    def __init__(self, exp_value=1.):
        
         # Exploration Value
         self.exp_value = exp_value
