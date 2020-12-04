@@ -15,3 +15,14 @@ register(
     id='ContinuousRiverswim-v0',
     entry_point='gym_exploration.envs:ContinuousRiverswim',
 )
+
+register(
+    id='Antishaping-v0',
+    entry_point='gym_exploration.envs:Antishaping',
+)
+
+register(
+    id='Hypercube-v0',
+    entry_point='gym_exploration.envs:Hypercube',
+)
+

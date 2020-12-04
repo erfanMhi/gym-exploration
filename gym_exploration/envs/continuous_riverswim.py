@@ -13,19 +13,17 @@ class ContinuousRiverswim(gym.Env):
                                   if a else
                                   (np.random.gamma(342.8, 0.01) - 3.378) / 1.6)
         self.nactions = 2
-
-        self.observation_space = spaces.Box(low=np.inf, high=np.inf, shape=(1,))
+        
+        # NOTE: these aren't hard bounds. The agent can go outside them temporarly
+        self.observation_space = spaces.Box(low=0, high=1, shape=(1,)) 
         self.action_space = spaces.Discrete(2)
 
-
     def reset(self):
-        self.pos = np.random.uniform(0.45, 0.55)
+        self.pos = np.random.uniform(0.2, 0.4)
         return self.pos
 
-    def render(self, mode='human'):
-        pass
-
     def step(self, action):
+        assert action == 0 or action == 1
         # move the agent
         self.pos += self.actions(action)
 
@@ -44,3 +42,11 @@ class ContinuousRiverswim(gym.Env):
 
     def numactions(self):
         return self.nactions
+    
+    def render(self, mode='human'):
+        pass
+
+    def close(self):
+        pass
+
+

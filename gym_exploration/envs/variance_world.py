@@ -21,12 +21,10 @@ class VarianceWorld(gym.Env):
         self.pos = np.random.uniform(0.45, 0.55)
         return self.pos
 
-    def render(self, mode='human'):
-        pass
-
     def step(self, action):
-        self.pos += self.actions(action)
+        assert action == 0 or action == 1
 
+        self.pos += self.actions(action)
         noisy = self.pos > 1
         stable = self.pos < 0
 
@@ -37,3 +35,9 @@ class VarianceWorld(gym.Env):
 
     def numactions(self):
         return self.nactions
+
+    def render(self, mode='human'):
+        pass
+
+    def close(self):
+        pass
