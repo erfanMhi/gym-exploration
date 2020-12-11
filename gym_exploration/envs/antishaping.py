@@ -40,7 +40,7 @@ class Antishaping(gym.Env):
         reward /= self.terminal_reward
         reward += 1 if terminal else 0
 
-        return reward, self.pos, terminal
+        return reward, self.pos, terminal, {}
 
     def numactions(self):
         return self.nactions

@@ -31,7 +31,7 @@ class VarianceWorld(gym.Env):
         terminal = noisy or stable
         reward = self.noisy_reward() if noisy else 0.02 if stable else 0
 
-        return reward, self.pos, terminal
+        return reward, self.pos, terminal, {}
 
     def numactions(self):
         return self.nactions

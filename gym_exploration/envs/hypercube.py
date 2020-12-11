@@ -54,7 +54,7 @@ class Hypercube(gym.Env):
         terminal = num_walls == self.dim
         reward = self.rewards[num_walls]
 
-        return reward, self.pos, terminal
+        return reward, self.pos, terminal, {}
 
     def numactions(self):
         return self.nactions
