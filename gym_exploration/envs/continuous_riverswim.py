@@ -38,7 +38,7 @@ class ContinuousRiverswim(gym.Env):
 
         terminal = False
 
-        return reward, self.pos, terminal, {}
+        return self.pos, reward, terminal, {}
 
     def numactions(self):
         return self.nactions
